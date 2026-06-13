@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorority Records</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#050505;
+    --card:#111111;
+    --text:#ffffff;
+    --pink:#ff4fa0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+/* GLOBAL TEXT GLOW */
+body{
+    background:var(--bg);
+    color:var(--text);
+    text-shadow:0 0 6px rgba(255,255,255,0.08);
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    background:rgba(0,0,0,.7);
+    backdrop-filter:blur(10px);
+    z-index:999;
+}
+
+.logo{
+    font-weight:900;
+    letter-spacing:3px;
+    text-shadow:0 0 10px rgba(255,79,160,0.25);
+}
+
+.logo span{
+    color:var(--pink);
+}
+
+/* LINKS */
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:clamp(3rem,8vw,7rem);
+    font-weight:900;
+    text-shadow:0 0 20px rgba(255,255,255,0.12);
+}
+
+.hero span{
+    color:var(--pink);
+    text-shadow:0 0 18px rgba(255,79,160,0.45);
+}
+
+/* BUTTON */
+.button{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 30px;
+    background:var(--pink);
+    color:white;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(255,79,160,0.25);
+}
+
+/* SECTIONS */
+section{
+    padding:100px 8%;
+}
+
+.title{
+    font-size:2.5rem;
+    margin-bottom:40px;
+}
+
+/* ARTISTS */
+.artists{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.artist{
+    background:var(--card);
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.artist:hover{
+    transform:translateY(-6px);
+}
+
+/* Spotify embed */
+.artist iframe{
+    width:100%;
+    height:380px;
+    border:none;
+}
+
+/* ARTIST NAME FIX (PINK) */
+.artist-info{
+    padding:15px;
+    color:var(--pink);
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/* RELEASES (PROFESSIONAL LAYOUT) */
+.releases-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.release-card{
+    background:linear-gradient(145deg,#111,#0a0a0a);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:20px;
+    transition:.3s;
+}
+
+.release-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(255,79,160,0.4);
+    box-shadow:0 0 25px rgba(255,79,160,0.08);
+}
+
+.release-title{
+    font-size:1.2rem;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.release-artist{
+    color:var(--pink);
+    margin-bottom:10px;
+    font-size:0.95rem;
+}
+
+.release-meta{
+    color:#aaa;
+    font-size:0.85rem;
+}
+
+/* APPLY */
+.apply{
+    text-align:center;
+}
+
+.apply-box{
+    background:var(--card);
+    padding:40px;
+    border-radius:20px;
+    max-width:600px;
+    margin:auto;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    color:#777;
+    border-top:1px solid #1a1a1a;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">SORORITY<span>.</span></div>
+    <div>
+        <a href="#artists">Artists</a>
+        <a href="#releases">Releases</a>
+        <a href="#apply">Apply</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>THE FUTURE OF <span>POP</span></h1>
+        <p>Hyperpop • Electropop • Pop • R&B</p>
+        <a class="button" href="#artists">Explore Artists</a>
+    </div>
+</section>
+
+<section id="artists">
+    <h2 class="title">Artists</h2>
+
+    <div class="artists">
+
+        <a class="artist" href="https://open.spotify.com/artist/3HOT28ZcsOD2bQKJw0YNhb" target="_blank">
+            <iframe src="https://open.spotify.com/embed/artist/3HOT28ZcsOD2bQKJw0YNhb"></iframe>
+            <div class="artist-info">MISS VANITY</div>
+        </a>
+
+        <a class="artist" href="https://open.spotify.com/artist/6X4xgWORy33UsJzK0goW5v" target="_blank">
+            <iframe src="https://open.spotify.com/embed/artist/6X4xgWORy33UsJzK0goW5v"></iframe>
+            <div class="artist-info">VANESSAXO</div>
+        </a>
+
+        <a class="artist" href="https://open.spotify.com/artist/4SgwXM06S9KcLXLVwqQask" target="_blank">
+            <iframe src="https://open.spotify.com/embed/artist/4SgwXM06S9KcLXLVwqQask"></iframe>
+            <div class="artist-info">NIKITA CRUSH</div>
+        </a>
+
+    </div>
+</section>
+
+<section id="releases">
+    <h2 class="title">Releases</h2>
+
+    <div class="releases-grid">
+
+        <div class="release-card">
+            <div class="release-title">Midnight Echoes</div>
+            <div class="release-artist">MISS VANITY</div>
+            <div class="release-meta">Single • 2026</div>
+        </div>
+
+        <div class="release-card">
+            <div class="release-title">City Lights</div>
+            <div class="release-artist">VANESSAXO</div>
+            <div class="release-meta">Single • 2026</div>
+        </div>
+
+        <div class="release-card">
+            <div class="release-title">Future Dreams</div>
+            <div class="release-artist">NIKITA CRUSH</div>
+            <div class="release-meta">Single • 2026</div>
+        </div>
+
+    </div>
+</section>
+
+<section id="apply" class="apply">
+    <div class="apply-box">
+        <h2>Apply Now</h2>
+        <p>Send your demo to Sorority Records</p>
+
+        <a class="button" 
+           href="https://docs.google.com/forms/d/e/1FAIpQLSfBlPUFMiwACR7XOcAzgbkRtlAOH71LHmWqkl0MVqcFpMxLXQ/viewform"
+           target="_blank">
+           Open Application Form
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2026 Sorority Records
+</footer>
+
+</body>
+</html>
