@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorority Records</title>
-    <!-- Google Fonts & FontAwesome for Instagram Logo -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts (DotGothic16 for Bitcount Single vibe & Inter) & FontAwesome for Instagram Logo -->
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* --- THEME COLORS --- */
         :root {
-            --bg-dark: #0a0a0c;
-            --bg-card: #121216;
+            --bg-dark: #070709;
+            --bg-card: #111116;
             --pink-primary: #ff4a8d;
-            --pink-glow: rgba(255, 74, 141, 0.4);
+            --pink-glow: rgba(255, 74, 141, 0.6);
             --text-main: #ffffff;
-            --text-muted: #a0a0ab;
+            --text-muted: #8e8e9f;
+            --nav-height: 90px;
         }
 
         /* --- GLOBAL STYLES --- */
@@ -24,119 +25,154 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
         section {
-            padding: 60px 0;
+            padding: 100px 0;
         }
 
-        /* --- HEADER --- */
+        /* --- GLOW EFFECTS --- */
+        .glow-text {
+            color: #fff;
+            text-shadow: 0 0 8px var(--pink-glow), 0 0 20px rgba(255, 74, 141, 0.3);
+        }
+
+        /* --- HEADER NAVIGATION --- */
         header {
-            padding: 30px 0;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            height: var(--nav-height);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            position: sticky;
+            top: 0;
+            background: rgba(7, 7, 9, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            position: relative;
         }
 
         .logo {
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: 1px;
+            font-family: 'DotGothic16', sans-serif;
+            font-size: 2.2rem;
             text-transform: uppercase;
+            text-decoration: none;
+            margin-left: 80px; 
         }
 
         .logo span {
             color: var(--pink-primary);
-            text-shadow: 0 0 10px var(--pink-glow);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            margin-left: auto;
+        }
+
+        .nav-link {
+            font-family: 'DotGothic16', sans-serif;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            transition: color 0.2s ease, text-shadow 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--pink-primary);
+            text-shadow: 0 0 8px var(--pink-glow);
         }
 
         /* --- SECTION 1: APPLY NOW --- */
         .apply-section {
             text-align: center;
-            padding: 80px 0;
-            background: radial-gradient(circle at center, rgba(255, 74, 141, 0.05) 0%, transparent 70%);
+            padding: 140px 0;
+            background: radial-gradient(circle at center, rgba(255, 74, 141, 0.06) 0%, transparent 65%);
+        }
+
+        .apply-title {
+            font-family: 'DotGothic16', sans-serif;
+            font-size: 6.5rem;
+            line-height: 1.1;
+            margin-bottom: 45px;
+            text-transform: uppercase;
+            text-shadow: 0 0 12px var(--pink-glow), 0 0 30px rgba(255, 74, 141, 0.4);
         }
 
         .cta-btn {
             display: inline-block;
             background: var(--pink-primary);
             color: #fff;
-            padding: 18px 45px;
-            border-radius: 50px;
+            padding: 18px 50px;
+            border-radius: 50px; 
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px var(--pink-glow);
+            font-family: 'DotGothic16', sans-serif;
+            font-size: 1.4rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 25px var(--pink-glow);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(255, 74, 141, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 35px rgba(255, 74, 141, 0.8);
+            background: #ff649f;
         }
 
         /* --- SECTION HEADINGS --- */
         .section-title {
+            font-family: 'DotGothic16', sans-serif;
             text-align: center;
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 40px;
+            font-size: 3.5rem;
+            margin-bottom: 60px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .section-title span {
             color: var(--pink-primary);
         }
 
-        /* --- ARTIST SPOTLIGHT --- */
+        /* --- SECTION 2: ARTIST SPOTLIGHT --- */
         .artist-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .artist-card {
             background: var(--bg-card);
             border-radius: 16px;
-            padding: 20px;
+            padding: 16px;
             border: 1px solid rgba(255, 255, 255, 0.03);
             display: flex;
             flex-direction: column;
-            align-items: center;
-        }
-
-        /* --- RELEASE SPOTLIGHT --- */
-        .release-section {
-            background: #0f0f13;
-        }
-
-        .release-container {
-            display: flex;
-            justify-content: center;
-            max-width: 800px;
-            margin: 0 auto;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
 
         /* --- FOOTER / INSTAGRAM --- */
         footer {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
         }
 
@@ -144,52 +180,62 @@
             display: inline-flex;
             align-items: center;
             gap: 15px;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: var(--text-main);
             text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s, transform 0.3s;
+            font-family: 'DotGothic16', sans-serif;
+            transition: color 0.2s, transform 0.2s, text-shadow 0.2s;
         }
 
         .footer-social i {
             color: var(--pink-primary);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            filter: drop-shadow(0 0 6px var(--pink-glow));
         }
 
         .footer-social:hover {
             color: var(--pink-primary);
-            transform: scale(1.05);
+            transform: scale(1.03);
+            text-shadow: 0 0 8px var(--pink-glow);
         }
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            .cta-btn { font-size: 1rem; padding: 15px 35px; }
-            .section-title { font-size: 1.8rem; }
+            .logo { margin-left: 0; } 
+            .nav-menu { display: none; } 
+            .apply-title { font-size: 4rem; }
+            .section-title { font-size: 2.5rem; }
+            section { padding: 80px 0; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header / Navigation -->
     <header>
-        <div class="container">
-            <div class="logo">Sorority<span>Records</span></div>
+        <div class="container nav-container">
+            <a href="#" class="logo glow-text">Sorority<span>Records</span></a>
+            <ul class="nav-menu">
+                <li><a href="#apply" class="nav-link">Apply</a></li>
+                <li><a href="#artists" class="nav-link">Artists</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- Section 1: Apply Now -->
-    <section class="apply-section">
+    <section id="apply" class="apply-section">
         <div class="container">
+            <h1 class="apply-title glow-text">APPLY NOW!!</h1>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBlPUFMiwACR7XOcAzgbkRtlAOH71LHmWqkl0MVqcFpMxLXQ/viewform" target="_blank" class="cta-btn">
-                Apply now thru our google form!
+                open google form
             </a>
         </div>
     </section>
 
     <!-- Section 2: Artist Spotlight -->
-    <section class="artists">
+    <section id="artists" class="artists">
         <div class="container">
-            <h2 class="section-title">Artist <span>Spotlight</span></h2>
+            <h2 class="section-title glow-text">Artist <span>Spotlight</span></h2>
             <div class="artist-grid">
                 
                 <!-- Miss Vanity -->
@@ -211,21 +257,10 @@
         </div>
     </section>
 
-    <!-- Section 3: Release Spotlight -->
-    <section class="release-section">
-        <div class="container">
-            <h2 class="section-title">Release <span>Spotlight</span></h2>
-            <div class="release-container">
-                <!-- Displays a dynamic player showing the label's latest featured tracks/releases via the artist link -->
-                <iframe src="https://open.spotify.com/embed/artist/4SgwXM06S9KcLXLVwqQask?utm_source=generator&theme=0" width="100%" height="350" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer: Instagram -->
+    <!-- Footer: Instagram Component -->
     <footer>
         <div class="container">
-            <a href="https://www.instagram.com/sorority.records" target="_blank" class="footer-social">
+            <a href="https://www.instagram.com/sorority.records" target="_blank" class="footer-social glow-text">
                 <i class="fab fa-instagram"></i> @sorority.records
             </a>
         </div>
